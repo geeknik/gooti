@@ -61,7 +61,7 @@ then
 1. within Firefox go to `about://debugging`
 2. click "This Firefox" on the left
 3. click on "Load Temporary Add-on..."
-4. select the `dist/firefox` folder
+4. open `dist/firefox` and select the `manifest.json` file
 
 ---
 

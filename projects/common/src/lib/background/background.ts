@@ -15,7 +15,12 @@ import { NostrHelper } from '../helpers/nostr-helper';
 export const initializeBackground = async (
   backgroundCommon: BackgroundCommon,
 ) => {
-  await backgroundCommon.loadAutoLockConfig();
+  void backgroundCommon.loadAutoLockConfig().catch((error) => {
+    backgroundCommon.debug(
+      `Could not load auto-lock config at startup: ${String(error)}`,
+      'error',
+    );
+  });
 
   type Relays = Record<string, { read: boolean; write: boolean }>;
 
